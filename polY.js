@@ -51,7 +51,7 @@ let
     flatpolyfix=(...l)=>(flatpolyfixl(l)), // Accepts arguments of the form (f1,f2,…,fn)=>(fnbody)
 
 // ...or just a version using the built in  Array.prototype.map.
-    polyfix= // Accepts arguments of the form f1=>f2=>…=>fn=>(fnbody)
+    polyfix= // Accepts arguments of the form (f1,f2,…,fn)=>(fnbody)
         (...l)=>(
             (u=>u(u))
             (p=>l.map(f=>(...x)=>f(...p(p))(...x)))),
